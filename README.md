@@ -44,10 +44,10 @@ Calculation of the most costly path of a pyramid from first line to end line
 
           4
          / \
-	    3   7
-	   / \ / \
+	3   7
+       / \ / \
       7   6	 7
-  	 / \ / \ / \
+     / \ / \ / \
     9   2   5   0
 
 > All steps
@@ -67,7 +67,7 @@ Calculation of the most costly path of a pyramid from first line to end line
   				Example:
   					For row-3 and counter[2]= 00-01-10-11 
 
-  						    4
+  						4
 	  				       / \
 	  				     [0] [1] 	->> counter[0]
 	  				     / 	   \
