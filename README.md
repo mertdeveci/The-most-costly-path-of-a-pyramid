@@ -9,7 +9,7 @@ Calculation of the most costly path of a pyramid from first line to end line
 
 @description: The program creates a pyramid of random numbers and finds the most costly path.
 
-    4		
+ >  4		
    3 7	  -> row-2 (Total nodes:3)
   7 6 7	  -> row-3 (Total nodes:6)
  9 2 5 0  -> row-4 (Total nodes:10)
