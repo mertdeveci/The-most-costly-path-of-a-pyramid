@@ -80,5 +80,5 @@ Calculation of the most costly path of a pyramid from first line to end line
 *  step-6:: Compare the sum value with biggest variable.
 *  step-7:: Continue until step-4 is over
 *  step-8:: Print the result on screen and deallocate the memory
-*
+* 
 * * * * * * * * * * * * * * * * * * * */
