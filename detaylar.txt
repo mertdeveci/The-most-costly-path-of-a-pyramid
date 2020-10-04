@@ -1,0 +1,87 @@
+
+
+/* * * * *  * * * * * * * * * * * * * * * * * * * 
+*
+*	@author: Mert Deveci
+*	@contact: mertdeveci0@gmail.com
+*	@contact: https://www.linkedin.com/in/mert-deveci-49361a135/
+*	@company: Sakarya University - Department of Computer Engineering (cs.sakarya.edu.tr)
+*	@date: 22/8/2020
+*
+*	@description: Random sayı üretimi ile piramit şeklinde bir ağaç ifade oluşturan ve en üst node değerinden, en alt satırda bulunan
+* 		node değerine yalnızca sağ-alt-çapraz ve sol-alt-çapraz yönlerinde ilerleyerek, en maliyetli yol değerini hesaplayan
+*		C programını yazınız.
+*
+*     				  4	-> Başlangıç Node Değeri
+*    				 3 7	-> 2. satır
+*   				7 6 7	-> 3. satır
+*  			       9 2 5 0 	-> 4. satır
+*  				 ...	-> n. satır (Sonuncu Node Değeri)
+*
+*   > n satırlı piramit ile ilgili aşağıdaki tablo oluşturulur.
+* 		>> satır_No: piramitin kaç satırdan oluştuğu
+* 		>> toplam_node: Her satır için üst satırlarla birlikte toplam node sayısı
+* 		>> Dallanma: En üstten en alt satıra kaç farklı yol ile gidilebileceği
+* 		>> sayac_bit_sayisi: En üstten en alta gidilebilen toplam yol sayısı kaç bit ile temsil edilebilinir.
+*	 _______________________________________________________________________________________________
+* 	|satır_No 	toplam_node	  Dallanma(Yol) 	sayac_biti_sayisi			|
+* 	|   2		     3  		2  		1 [0-1]					|
+* 	|   3		     6 			4 		2 [00-01-10-11]				|
+* 	|   4 		     10			8 		3 [000-001-010-011-100-101-110-111]	|
+* 	|   ...												|
+* 	|   n 		     ... 	      2^(n-1)		(n-1)					|
+*	|_______________________________________________________________________________________________|
+*
+*   > Yukarıdaki tabloya göre aşağıdaki denklemler elde edilir.
+*  		>> n satırlı piramit için, toplam yol(dallanma) sayısı= 2^(n-1)
+*  		>> n satırlı piramit için, sayaç biti sayısı= n-1
+*
+*
+*
+* 	
+*		
+*	@solution_way:		  4
+*	  			 / \
+*	  			3   7
+*	 		       / \ / \
+*			      7   6   7
+*  			     / \ / \ / \
+* 			    9   2   5   0
+*
+*			    (ÖRNEK PİRAMİT)
+*
+*  Adım-1:: Kullanıcıdan alınan satır bilgisine göre dinamik tanımlanmış 2 boyutlu dizi oluşturulacak.
+*  Adım-2:: Oluşturulan 2 boyutlu dizinin her bir piramitsel konumuna random değer atanıp ekrana yazdırılacak
+*  Adım-3:: Sayaç(counter), adında tek boyutlu dinamik dizi tanımlanacak. Bu dizinin uzunluğu sayac_biti_sayisi kadar olacak
+*  Adım-4:: i=0'dan başlayarak dallanma sayısına kadar olan tüm sayılar binary hale çevrilerek sayaç dizisine atanacak
+*  				örnek:
+*  		   		satır no=3 ise counter[2] dizisi sırasıyla 00, 01, 10, 11 değerlerini tutacak
+*
+*  Adım-5:: piramit üzerinde counter dizisinin o an tuttuğu değerlere göre gezinme işlemi yapılacak.
+*  			> counter[0]==0 ise sola
+*  			> counter[1]==1 değeri için sağ ilerlenecek.
+*  				örnek:
+*  					n=3 için counter[n-1] ve counter[2] sırasıyla 00-01-10-11 değerlerini tutacak
+
+*  						4
+*	  				       / \
+*	  				     [0] [1] 	->> counter[0]
+*	  				     / 	   \
+*	  				    3	    7
+*					   / \ 	   / \
+*					 [0] [1] [0] [1]  ->> counter[1]
+*					 /     \ /     \
+*					7	6 	7
+*
+*
+*			> counter dizisinin değerleri (00-01-10-11) ile piramit üzerinde arama işlemi yapılır.
+* 				>> counter[0]==0 and counter[1]==0 ->> 4-3-7
+*				>> counter[0]==0 and counter[1]==1 ->> 4-3-6
+* 				>> counter[0]==1 and counter[1]==0 ->> 4-7-6
+*				>> counter[0]==1 and counter[1]==1 ->> 4-7-7 [BIGGEST]
+*
+*	Adım-6:: Her bir counter dizisi değeri en büyük değer ile kontrol edilerek en büyük değer bulunur.
+*	Adım-7:: 4. adımdaki i değeri bitene kadar işlem devam ettirilir.
+*	Adım-8:: Sonuç ekrana yazdırılır ve bellek alanları işletim sistemine geri devredilir.
+*
+* * * * * * * * * * * * * * * * * * * */
