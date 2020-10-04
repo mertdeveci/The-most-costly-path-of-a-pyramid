@@ -10,7 +10,7 @@ Calculation of the most costly path of a pyramid from first line to end line
 ###### @date: 22/8/2020
 
 ###### @description: The program creates a pyramid of random numbers and finds the most costly path.
-###### ''
+
 
 
 	 	  4		
