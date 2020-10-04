@@ -51,15 +51,15 @@ Calculation of the most costly path of a pyramid from first line to end line
     9   2   5   0
 
 ## All steps
-  step-1:: Create a 2D array and its size will be given by the user.
-  step-2:: Each position of the pyramid will be filled with random numbers and the pyramid will be printed on the screen.
-  step-3:: Create a dynamic array called counter, its size will be the same as the variable 'counter_bites'.
-  step-4:: All numbers starting from i = 0 up to the branching variable will be converted to binary and assigned to the 'counter' array.
+  	step-1:: Create a 2D array and its size will be given by the user.
+  	step-2:: Each position of the pyramid will be filled with random numbers and the pyramid will be printed on the screen.
+  	step-3:: Create a dynamic array called counter, its size will be the same as the variable 'counter_bites'.
+  	step-4:: All numbers starting from i = 0 up to the branching variable will be converted to binary and assigned to the 'counter' array.
  			
  				Example:
 				For row-3: counter[2]={ 00, 01, 10, 11}
 
-  step-5:: You will forward on the pyramid according to the values of the counter array.
+  	step-5:: You will forward on the pyramid according to the values of the counter array.
   
   			 counter[0]==0 forward left-cross
   			 counter[1]==1 forward right-cross
@@ -82,7 +82,7 @@ Calculation of the most costly path of a pyramid from first line to end line
  				>> counter[0]==1 and counter[1]==0 ->> 4-7-6
 				>> counter[0]==1 and counter[1]==1 ->> 4-7-7 [BIGGEST]
 
-  step-6:: Compare the sum value with biggest variable.
-  step-7:: Continue until step-4 is over
-  step-8:: Print the result on screen and deallocate the memory
+  	step-6:: Compare the sum value with biggest variable.
+  	step-7:: Continue until step-4 is over
+  	step-8:: Print the result on screen and deallocate the memory
 
