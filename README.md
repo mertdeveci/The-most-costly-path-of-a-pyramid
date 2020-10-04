@@ -19,7 +19,7 @@ Calculation of the most costly path of a pyramid from first line to end line
  	       9 2 5 0  -> row-4 (Total nodes:10)
  		  ...	-> row-n 
 
-The table below can be made for the n-line pyramid
+> The table below can be made for the n-line pyramid
      - line: The number of the pyramid line.
      - total_nodes: Total nodes
      - Branching: Number of branches from the first line to the finish line
