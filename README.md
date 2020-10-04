@@ -20,22 +20,22 @@ Calculation of the most costly path of a pyramid from first line to end line
  		  ...	-> row-n 
 
 > The table below can be made for the n-line pyramid
-     - line: The number of the pyramid line.
-     - total_nodes: Total nodes
-     - Branching: Number of branches from the first line to the finish line
-     - counter_bites: The number of branches can be represented in how many bytes.
+     -line: The number of the pyramid line.
+     -total_nodes: Total nodes
+     -Branching: Number of branches from the first line to the finish line
+     -counter_bites: The number of branches can be represented in how many bytes.
 
     line | total_nodes | Branching | counter_bites				
        2	3	     2  	1 [0-1]					
        3	6 	     4 		2 [00-01-10-11]				
        4 	10	     8 	        3 [000-001-010-011-100-101-110-111]
        ...												
-       n 	... 	2^(n-1)		    (n-1)					
+       n 	... 	 2^(n-1)	(n-1)					
 
 
 > According to the table above, the following equations are obtained.
-  - For the n-row pyramid, the total number of paths (branches) = 2 ^ (n-1)
-  - For the n-row pyramid, the number of counter bits = n-1
+  -For the n-row pyramid, the total number of paths (branches) = 2 ^ (n-1)
+  -For the n-row pyramid, the number of counter bits = n-1
 
 
  	
@@ -46,7 +46,7 @@ Calculation of the most costly path of a pyramid from first line to end line
          / \
 	3   7
        / \ / \
-      7   6	 7
+      7   6   7
      / \ / \ / \
     9   2   5   0
 
