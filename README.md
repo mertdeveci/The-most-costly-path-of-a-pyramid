@@ -52,6 +52,7 @@ Calculation of the most costly path of a pyramid from first line to end line
     9   2   5   0
 
 > All steps
+
   -step-1:: Create a 2D array and its size will be given by the user.
   -step-2:: Each position of the pyramid will be filled with random numbers and the pyramid will be printed on the screen.
   -step-3:: Create a dynamic array called counter, its size will be the same as the variable 'counter_bites'.
